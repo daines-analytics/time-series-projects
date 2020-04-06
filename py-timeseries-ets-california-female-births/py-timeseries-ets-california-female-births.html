@@ -13261,8 +13261,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load the dataset</span>
-<span class="c1"># time_series = pd.read_csv(&#39;https://dainesanalytics.com/datasets/time-series-data-library/tsdl532.csv&#39;, index_col=&#39;idx&#39;, parse_dates=True)</span>
-<span class="n">time_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jbrownlee/Datasets/master/daily-total-female-births.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">time_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://dainesanalytics.com/datasets/time-series-data-library/tsdl532.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">time_series</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 
@@ -13290,10 +13289,35 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This section will be further developed in future iterations</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_series</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 365 entries, 1959-01-01 to 1959-12-31
+Data columns (total 1 columns):
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
+ 0   values  365 non-null    int64
+dtypes: int64(1)
+memory usage: 5.7+ KB
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13301,6 +13325,166 @@ div#notebook {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_series</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>values</th>
+    </tr>
+    <tr>
+      <th>idx</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1959-01-01</th>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>1959-01-02</th>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>1959-01-03</th>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>1959-01-04</th>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1959-01-05</th>
+      <td>44</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_series</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>values</th>
+    </tr>
+    <tr>
+      <th>idx</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1959-12-27</th>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>1959-12-28</th>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>1959-12-29</th>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>1959-12-30</th>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>1959-12-31</th>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 1. Prepare Environment completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -13320,7 +13504,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 2. Inspect and Explore Data has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -13333,7 +13517,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This section will be further developed in future iterations</span>
@@ -13346,7 +13530,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 2. Inspect and Explore Data completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -13366,7 +13550,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 3. Clean and Pre-Process Data has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -13379,7 +13563,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This section will be further developed in future iterations</span>
@@ -13392,7 +13576,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 3. Clean and Pre-Process Data completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -13406,19 +13590,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Task-4.-Fit-and-Evaluate-Models">Task 4. Fit and Evaluate Models<a class="anchor-link" href="#Task-4.-Fit-and-Evaluate-Models">&#182;</a></h2><p>In this section, we will develop Autoregressive Integrated Moving Average or ARIMA models for the problem. We will first establish a persistent model. Next we will use a grid search approach to look for an optimal ARIMA model. This will be followed by a third step of investigating the residual errors of the chosen model.</p>
-<ul>
-<li>Establish the Persistent Model</li>
-<li>Automatically Configure the ARIMA</li>
-<li>Review Residual Errors</li>
-</ul>
-
+<h2 id="Task-4.-Fit-and-Evaluate-Models">Task 4. Fit and Evaluate Models<a class="anchor-link" href="#Task-4.-Fit-and-Evaluate-Models">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 4. Fit and Evaluate Models has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -13431,7 +13609,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># one-step Holt Winter’s Exponential Smoothing forecast</span>
@@ -13517,8 +13695,7 @@ div#notebook {
 	<span class="c1"># define config lists</span>
 	<span class="n">t_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
 	<span class="n">d_params</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
-<span class="c1"># 	s_params = [&#39;add&#39;, &#39;mul&#39;, None]</span>
-	<span class="n">s_params</span> <span class="o">=</span> <span class="n">seasonal</span>
+	<span class="n">s_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
 	<span class="n">p_params</span> <span class="o">=</span> <span class="n">seasonal</span>
 	<span class="n">b_params</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
 	<span class="n">r_params</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
@@ -13541,17 +13718,100 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># model configs</span>
 <span class="n">cfg_list</span> <span class="o">=</span> <span class="n">exp_smoothing_configs</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gathered the following models to process:&#39;</span><span class="p">,</span> <span class="n">cfg_list</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="c1"># grid search</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model fitting has begun!&#39;</span><span class="p">)</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">grid_search</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">cfg_list</span><span class="p">,</span> <span class="n">n_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model fitting completed!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="c1"># list top 3 configs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model fitting completed!&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Model fitting has begun!
+ &gt; Model[[&#39;add&#39;, False, None, None, False, True]] RMSE: 7.096
+ &gt; Model[[&#39;add&#39;, False, None, None, True, True]] RMSE: 7.214
+ &gt; Model[[&#39;add&#39;, False, None, None, False, False]] RMSE: 7.098
+ &gt; Model[[&#39;add&#39;, False, None, None, True, False]] RMSE: 7.208
+ &gt; Model[[&#39;add&#39;, True, None, None, False, True]] RMSE: 7.113
+ &gt; Model[[&#39;add&#39;, True, None, None, True, True]] RMSE: 7.112
+ &gt; Model[[&#39;mul&#39;, False, None, None, True, True]] RMSE: 6.984
+ &gt; Model[[&#39;mul&#39;, False, None, None, True, False]] RMSE: 7.014
+ &gt; Model[[&#39;mul&#39;, False, None, None, False, True]] RMSE: 7.179
+ &gt; Model[[&#39;add&#39;, True, None, None, False, False]] RMSE: 7.126
+ &gt; Model[[None, False, None, None, True, True]] RMSE: 7.169
+ &gt; Model[[&#39;add&#39;, True, None, None, True, False]] RMSE: 7.167
+ &gt; Model[[&#39;mul&#39;, False, None, None, False, False]] RMSE: 7.174
+ &gt; Model[[None, False, None, None, False, True]] RMSE: 7.117
+ &gt; Model[[None, False, None, None, False, False]] RMSE: 7.126
+ &gt; Model[[None, False, None, None, True, False]] RMSE: 7.212
+ &gt; Model[[&#39;mul&#39;, True, None, None, True, True]] RMSE: 7.111
+ &gt; Model[[&#39;mul&#39;, True, None, None, True, False]] RMSE: 7.147
+ &gt; Model[[&#39;mul&#39;, True, None, None, False, True]] RMSE: 7.108
+ &gt; Model[[&#39;mul&#39;, True, None, None, False, False]] RMSE: 7.112
+Model fitting completed!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 4. Fit and Evaluate Models completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Task-5.-Finalize-Model">Task 5. Finalize Model<a class="anchor-link" href="#Task-5.-Finalize-Model">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 5. Finalize Model has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># list top 3 configs</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Listing the top three models:&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">cfg</span><span class="p">,</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
@@ -13571,32 +13831,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Gathered the following models to process: [[&#39;add&#39;, True, None, None, True, True], [&#39;add&#39;, True, None, None, True, False], [&#39;add&#39;, True, None, None, False, True], [&#39;add&#39;, True, None, None, False, False], [&#39;add&#39;, False, None, None, True, True], [&#39;add&#39;, False, None, None, True, False], [&#39;add&#39;, False, None, None, False, True], [&#39;add&#39;, False, None, None, False, False], [&#39;mul&#39;, True, None, None, True, True], [&#39;mul&#39;, True, None, None, True, False], [&#39;mul&#39;, True, None, None, False, True], [&#39;mul&#39;, True, None, None, False, False], [&#39;mul&#39;, False, None, None, True, True], [&#39;mul&#39;, False, None, None, True, False], [&#39;mul&#39;, False, None, None, False, True], [&#39;mul&#39;, False, None, None, False, False], [None, True, None, None, True, True], [None, True, None, None, True, False], [None, True, None, None, False, True], [None, True, None, None, False, False], [None, False, None, None, True, True], [None, False, None, None, True, False], [None, False, None, None, False, True], [None, False, None, None, False, False]] 
-
-Model fitting has begun!
- &gt; Model[[&#39;add&#39;, True, None, None, False, False]] RMSE: 7.126
- &gt; Model[[&#39;add&#39;, True, None, None, False, True]] RMSE: 7.113
- &gt; Model[[&#39;add&#39;, True, None, None, True, True]] RMSE: 7.112
- &gt; Model[[&#39;add&#39;, True, None, None, True, False]] RMSE: 7.167
- &gt; Model[[&#39;add&#39;, False, None, None, False, True]] RMSE: 7.096
- &gt; Model[[&#39;add&#39;, False, None, None, True, True]] RMSE: 7.214
- &gt; Model[[&#39;add&#39;, False, None, None, False, False]] RMSE: 7.098
- &gt; Model[[&#39;add&#39;, False, None, None, True, False]] RMSE: 7.208
- &gt; Model[[&#39;mul&#39;, True, None, None, False, True]] RMSE: 7.108
- &gt; Model[[&#39;mul&#39;, True, None, None, True, True]] RMSE: 7.111
- &gt; Model[[&#39;mul&#39;, True, None, None, True, False]] RMSE: 7.147
- &gt; Model[[&#39;mul&#39;, True, None, None, False, False]] RMSE: 7.112
- &gt; Model[[&#39;mul&#39;, False, None, None, False, True]] RMSE: 7.179
- &gt; Model[[&#39;mul&#39;, False, None, None, True, True]] RMSE: 6.984
- &gt; Model[[&#39;mul&#39;, False, None, None, True, False]] RMSE: 7.014
- &gt; Model[[&#39;mul&#39;, False, None, None, False, False]] RMSE: 7.174
- &gt; Model[[None, False, None, None, False, True]] RMSE: 7.117
- &gt; Model[[None, False, None, None, False, False]] RMSE: 7.126
- &gt; Model[[None, False, None, None, True, True]] RMSE: 7.169
- &gt; Model[[None, False, None, None, True, False]] RMSE: 7.212
-Model fitting completed!
-
-Listing the top three models:
+<pre>Listing the top three models:
 [&#39;mul&#39;, False, None, None, True, True] 6.984371347779634
 [&#39;mul&#39;, False, None, None, True, False] 7.014127426666677
 [&#39;add&#39;, False, None, None, False, True] 7.096324503852218
@@ -13610,54 +13845,7 @@ Listing the top three models:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 4. Fit and Evaluate Models completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Task-5.-Finalize-Model">Task 5. Finalize Model<a class="anchor-link" href="#Task-5.-Finalize-Model">&#182;</a></h2><p>After models have been developed and a final model selected, it must be validated and finalized. Validation is an optional part of the process, but one that provides a ‘last check’ to ensure we have not fooled or lied to ourselves.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 5. Finalize Model has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This section will be further developed in future iterations</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notifyStatus</span><span class="p">):</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 5. Finalize Model completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -13670,7 +13858,7 @@ Listing the top three models:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Total time for the script:&#39;</span><span class="p">,(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">startTimeScript</span><span class="p">))</span>
@@ -13690,7 +13878,7 @@ Listing the top three models:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Total time for the script: 0:03:12.515655
+<pre>Total time for the script: 0:07:46.671057
 </pre>
 </div>
 </div>
