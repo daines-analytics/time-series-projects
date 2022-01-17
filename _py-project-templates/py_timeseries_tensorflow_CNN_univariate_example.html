@@ -14519,7 +14519,7 @@ a.anchor-link {
 <p>Additional Notes: The workflow is a replication of Dr. Brownlee's blog post "Deep Learning Models for Univariate Time Series Forecasting" (<a href="https://machinelearningmastery.com/how-to-develop-deep-learning-models-for-univariate-time-series-forecasting/">https://machinelearningmastery.com/how-to-develop-deep-learning-models-for-univariate-time-series-forecasting/</a>). I plan to build a script for building future projects by adapting the example workflow presented in the blog.</p>
 <p>SUMMARY: [Sample Paragraph - The project aims to construct a time series prediction model and document the end-to-end steps using a template. The [PROJECT NAME] dataset is an univariate time series situation where we are trying to forecast future outcomes based on past data points.]</p>
 <p>INTRODUCTION: [Sample Paragraph - The problem is to forecast the monthly number of airline passenger miles traveled in the United States. The dataset describes a time-series of miles (in millions) over 18 years (1960-1977), and there are 216 observations. We used the first 80% of the observations for training various models while holding back the remaining observations for validating the final model.]</p>
-<p>ANALYSIS: [Sample Paragraph - The baseline persistence model yielded an RMSE of 2.278. The CNN model processed the same test data with an RMSE of 0.740, which was better than the baseline model as expected.]</p>
+<p>ANALYSIS: [Sample Paragraph - The baseline persistence model yielded an RMSE of 2.278. The CNN model processed the same test data with an RMSE of 0.941, which was better than the baseline model as expected.]</p>
 <p>CONCLUSION: For this dataset, the chosen TensorFlow CNN model achieved a satisfactory result and should be considered for further modeling.</p>
 <p>Dataset Used: [Sample Paragraph - Monthly U.S Air Passenger Miles January 1960 through December 1977]</p>
 <p>Dataset ML Model: Time series forecast with numerical attribute</p>
@@ -14685,8 +14685,8 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-01-16 23:19:47.220600: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
-2022-01-16 23:19:47.220686: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<pre>2022-01-17 00:37:06.753752: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-01-17 00:37:06.753823: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre>
 </div>
 </div>
@@ -14742,9 +14742,9 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-01-16 23:19:51.740331: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2022-01-16 23:19:51.740399: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-01-16 23:19:51.740450: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (32eee83f52a0): /proc/driver/nvidia/version does not exist
+<pre>2022-01-17 00:37:11.182492: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-01-17 00:37:11.182559: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-01-17 00:37:11.182609: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (32eee83f52a0): /proc/driver/nvidia/version does not exist
 </pre>
 </div>
 </div>
@@ -14784,7 +14784,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 1 - Define Problem and Acquire Data has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 1 - Define Problem and Acquire Data has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14992,7 +14992,7 @@ idx
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 1 - Define Problem and Acquire Data completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 1 - Define Problem and Acquire Data completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15011,7 +15011,7 @@ idx
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 2 - Summarize and Visualize Data has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 2 - Summarize and Visualize Data has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15262,7 +15262,7 @@ max     19.490000
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 2 - Summarize and Visualize Data completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 2 - Summarize and Visualize Data completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15281,7 +15281,7 @@ max     19.490000
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 3 - Pre-Process Data has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 3 - Pre-Process Data has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15356,7 +15356,7 @@ Number of data points in the test set: 12
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 3 - Pre-Process Data completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 3 - Pre-Process Data completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15375,7 +15375,7 @@ Number of data points in the test set: 12
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 4 - Train and Tune Models has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 4 - Train and Tune Models has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15468,7 +15468,7 @@ Number of data points in the test set: 12
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.b)-Establish-Persistent-Model-as-Baseline">4.b) Establish Persistent Model as Baseline<a class="anchor-link" href="#4.b)-Establish-Persistent-Model-as-Baseline">&#182;</a></h3>
+<h3 id="4.b)-Simple-Persistent-Modeling-as-a-Baseline">4.b) Simple Persistent Modeling as a Baseline<a class="anchor-link" href="#4.b)-Simple-Persistent-Modeling-as-a-Baseline">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -15647,10 +15647,10 @@ Number of data points in the test set: 12
     <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
     <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">n_filters</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="n">n_kernel</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_input</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
     <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">n_filters</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="n">n_kernel</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling1D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool1D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
     <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">())</span>
     <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="n">DEFAULT_LOSS</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">DEFAULT_OPTIMIZER</span><span class="p">)</span>
     <span class="c1"># fit</span>
     <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">n_epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">n_batch</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">model</span>
@@ -15713,35 +15713,35 @@ Number of data points in the test set: 12
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre> &gt; 0.768
+ &gt; 0.899
+ &gt; 0.570
+ &gt; 0.997
+ &gt; 1.090
+ &gt; 0.919
+ &gt; 0.985
+ &gt; 0.961
+ &gt; 1.318
+ &gt; 1.390
+ &gt; 1.028
+ &gt; 1.146
+ &gt; 1.403
+ &gt; 1.083
+ &gt; 1.001
  &gt; 0.687
- &gt; 0.789
- &gt; 0.581
- &gt; 0.828
- &gt; 0.749
- &gt; 0.858
- &gt; 0.748
- &gt; 0.677
- &gt; 0.732
- &gt; 0.673
- &gt; 0.730
- &gt; 0.848
- &gt; 0.727
- &gt; 0.744
- &gt; 0.930
- &gt; 0.724
- &gt; 0.754
- &gt; 0.840
- &gt; 0.697
- &gt; 0.779
- &gt; 0.724
- &gt; 0.618
- &gt; 0.560
- &gt; 0.700
- &gt; 0.682
- &gt; 0.703
- &gt; 0.603
- &gt; 0.857
- &gt; 0.881
+ &gt; 0.669
+ &gt; 1.358
+ &gt; 0.527
+ &gt; 0.711
+ &gt; 0.629
+ &gt; 0.989
+ &gt; 0.976
+ &gt; 0.568
+ &gt; 0.650
+ &gt; 0.767
+ &gt; 0.853
+ &gt; 1.142
+ &gt; 1.166
+ &gt; 0.975
 </pre>
 </div>
 </div>
@@ -15777,7 +15777,7 @@ Number of data points in the test set: 12
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CNN Model:: 0.740 RMSE (+/- 0.087)
+<pre>CNN Model:: 0.941 RMSE (+/- 0.246)
 </pre>
 </div>
 </div>
@@ -15791,7 +15791,7 @@ Number of data points in the test set: 12
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -15808,7 +15808,7 @@ Number of data points in the test set: 12
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 4 - Train and Tune Models completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 4 - Train and Tune Models completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15827,7 +15827,7 @@ Number of data points in the test set: 12
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 5 - Finalize Model and Make Predictions has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 5 - Finalize Model and Make Predictions has begun! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15855,7 +15855,7 @@ Number of data points in the test set: 12
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;CNN Time Series Task 5 - Finalize Model and Make Predictions completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">NOTIFY_STATUS</span><span class="p">:</span> <span class="n">status_notify</span><span class="p">(</span><span class="s2">&quot;TensorFlow Time Series Task 5 - Finalize Model and Make Predictions completed! &quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15889,7 +15889,7 @@ Number of data points in the test set: 12
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Total time for the script: 0:06:15.294526
+<pre>Total time for the script: 0:06:19.786053
 </pre>
 </div>
 </div>
