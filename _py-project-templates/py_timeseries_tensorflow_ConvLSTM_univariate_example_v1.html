@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>py_timeseries_tensorflow_MLP_univariate_example</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>py_timeseries_tensorflow_ConvLSTM_univariate_example</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14515,12 +14515,12 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Univariate-Time-Series-MLP-Model-for-%5BPROJECT-NAME%5D-Using-TensorFlow-Version-1">Univariate Time Series MLP Model for [PROJECT NAME] Using TensorFlow Version 1<a class="anchor-link" href="#Univariate-Time-Series-MLP-Model-for-%5BPROJECT-NAME%5D-Using-TensorFlow-Version-1">&#182;</a></h1><h3 id="David-Lowe">David Lowe<a class="anchor-link" href="#David-Lowe">&#182;</a></h3><h3 id="January-12,-2022">January 12, 2022<a class="anchor-link" href="#January-12,-2022">&#182;</a></h3><p>Template Credit: Adapted from a template made available by Dr. Jason Brownlee of Machine Learning Mastery. <a href="https://machinelearningmastery.com/">https://machinelearningmastery.com/</a></p>
+<h1 id="Univariate-Time-Series-ConvLSTM-Model-for-%5BPROJECT-NAME%5D-Using-TensorFlow-Version-1">Univariate Time Series ConvLSTM Model for [PROJECT NAME] Using TensorFlow Version 1<a class="anchor-link" href="#Univariate-Time-Series-ConvLSTM-Model-for-%5BPROJECT-NAME%5D-Using-TensorFlow-Version-1">&#182;</a></h1><h3 id="David-Lowe">David Lowe<a class="anchor-link" href="#David-Lowe">&#182;</a></h3><h3 id="February-9,-2022">February 9, 2022<a class="anchor-link" href="#February-9,-2022">&#182;</a></h3><p>Template Credit: Adapted from a template made available by Dr. Jason Brownlee of Machine Learning Mastery. <a href="https://machinelearningmastery.com/">https://machinelearningmastery.com/</a></p>
 <p>Additional Notes: The workflow is a replication of Dr. Brownlee's blog post "Deep Learning Models for Univariate Time Series Forecasting" (<a href="https://machinelearningmastery.com/how-to-develop-deep-learning-models-for-univariate-time-series-forecasting/">https://machinelearningmastery.com/how-to-develop-deep-learning-models-for-univariate-time-series-forecasting/</a>). I plan to build a script for building future projects by adapting the example workflow presented in the blog.</p>
 <p>SUMMARY: [Sample Paragraph - The project aims to construct a time series prediction model and document the end-to-end steps using a template. The [PROJECT NAME] dataset is an univariate time series situation where we are trying to forecast future outcomes based on past data points.]</p>
 <p>INTRODUCTION: [Sample Paragraph - The problem is to forecast the monthly number of airline passenger miles traveled in the United States. The dataset describes a time-series of miles (in millions) over 18 years (1960-1977), and there are 216 observations. We used the first 80% of the observations for training various models while holding back the remaining observations for validating the final model.]</p>
-<p>ANALYSIS: [Sample Paragraph - The baseline persistence model yielded an RMSE of 2.278. The MLP model processed the same test data with an RMSE of 0.892, which was better than the baseline model as expected.]</p>
-<p>CONCLUSION: For this dataset, the chosen TensorFlow MLP model achieved a satisfactory result and should be considered for further modeling.</p>
+<p>ANALYSIS: [Sample Paragraph - The baseline persistence model yielded an RMSE of 2.278. The CNN model processed the same test data with an RMSE of 1.674, which was better than the baseline model as expected.]</p>
+<p>CONCLUSION: For this dataset, the chosen TensorFlow ConvLSTM model achieved a satisfactory result and should be considered for further modeling.</p>
 <p>Dataset Used: [Sample Paragraph - Monthly U.S Air Passenger Miles January 1960 through December 1977]</p>
 <p>Dataset ML Model: Time series forecast with numerical attribute</p>
 <p>Dataset Reference: Rob Hyndman and Yangzhuoran Yang (2018). tsdl: Time Series Data Library. v0.1.0. <a href="https://pkg.yangzhuoranyang./tsdl/">https://pkg.yangzhuoranyang./tsdl/</a>.</p>
@@ -14685,8 +14685,8 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-01-17 00:14:30.683575: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
-2022-01-17 00:14:30.683655: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<pre>2022-01-17 03:36:43.234857: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-01-17 03:36:43.234935: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre>
 </div>
 </div>
@@ -14742,9 +14742,9 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-01-17 00:14:35.303761: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2022-01-17 00:14:35.303823: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-01-17 00:14:35.303875: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (32eee83f52a0): /proc/driver/nvidia/version does not exist
+<pre>2022-01-17 03:36:47.658808: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-01-17 03:36:47.658885: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-01-17 03:36:47.658936: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (32eee83f52a0): /proc/driver/nvidia/version does not exist
 </pre>
 </div>
 </div>
@@ -15627,7 +15627,7 @@ Number of data points in the test set: 12
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.c)-MLP-Modeling-and-Tuning">4.c) MLP Modeling and Tuning<a class="anchor-link" href="#4.c)-MLP-Modeling-and-Tuning">&#182;</a></h3>
+<h3 id="4.c)-ConvLSTM-Modeling-and-Tuning">4.c) ConvLSTM Modeling and Tuning<a class="anchor-link" href="#4.c)-ConvLSTM-Modeling-and-Tuning">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -15638,13 +15638,17 @@ Number of data points in the test set: 12
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># fit a model</span>
 <span class="k">def</span> <span class="nf">model_fit</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
     <span class="c1"># unpack config</span>
-    <span class="n">n_input</span><span class="p">,</span> <span class="n">n_nodes</span><span class="p">,</span> <span class="n">n_epochs</span><span class="p">,</span> <span class="n">n_batch</span> <span class="o">=</span> <span class="n">config</span>
+    <span class="n">n_seq</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">n_filters</span><span class="p">,</span> <span class="n">n_kernel</span><span class="p">,</span> <span class="n">n_nodes</span><span class="p">,</span> <span class="n">n_epochs</span><span class="p">,</span> <span class="n">n_batch</span> <span class="o">=</span> <span class="n">config</span>
+    <span class="n">n_input</span> <span class="o">=</span> <span class="n">n_seq</span> <span class="o">*</span> <span class="n">n_steps</span>
     <span class="c1"># prepare data</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">series_to_supervised</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">n_in</span><span class="o">=</span><span class="n">n_input</span><span class="p">)</span>
     <span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">train_x</span> <span class="o">=</span> <span class="n">train_x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">train_x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n_seq</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
     <span class="c1"># define model</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">n_nodes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="n">n_input</span><span class="p">))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">ConvLSTM2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">n_filters</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_kernel</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_seq</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">())</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">n_nodes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
     <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="n">DEFAULT_LOSS</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">DEFAULT_OPTIMIZER</span><span class="p">)</span>
     <span class="c1"># fit</span>
@@ -15666,9 +15670,10 @@ Number of data points in the test set: 12
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># forecast with a pre-fit model</span>
 <span class="k">def</span> <span class="nf">model_predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">history</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
     <span class="c1"># unpack config</span>
-    <span class="n">n_input</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">config</span>
+    <span class="n">n_seq</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">config</span>
+    <span class="n">n_input</span> <span class="o">=</span> <span class="n">n_seq</span> <span class="o">*</span> <span class="n">n_steps</span>
     <span class="c1"># prepare data</span>
-    <span class="n">x_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="o">-</span><span class="n">n_input</span><span class="p">:])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_input</span><span class="p">)</span>
+    <span class="n">x_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="o">-</span><span class="n">n_input</span><span class="p">:])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_seq</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
     <span class="c1"># forecast</span>
     <span class="n">yhat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_input</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">yhat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -15686,7 +15691,7 @@ Number of data points in the test set: 12
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define config</span>
-<span class="n">config</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">config</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 <span class="c1"># grid search</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">repeat_evaluate</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">n_test</span><span class="p">)</span>
 </pre></div>
@@ -15708,36 +15713,36 @@ Number of data points in the test set: 12
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre> &gt; 0.656
- &gt; 0.742
- &gt; 0.786
- &gt; 0.996
- &gt; 0.882
- &gt; 0.920
- &gt; 0.779
- &gt; 0.951
- &gt; 0.974
- &gt; 0.808
- &gt; 0.708
- &gt; 0.903
- &gt; 0.938
- &gt; 1.042
- &gt; 0.826
- &gt; 0.925
- &gt; 1.032
- &gt; 0.955
- &gt; 0.782
- &gt; 0.964
- &gt; 0.987
- &gt; 0.674
- &gt; 0.967
- &gt; 0.818
- &gt; 0.802
- &gt; 0.935
- &gt; 0.996
- &gt; 0.905
- &gt; 1.056
- &gt; 0.897
+<pre> &gt; 1.164
+ &gt; 1.065
+ &gt; 1.320
+ &gt; 2.436
+ &gt; 1.356
+ &gt; 2.013
+ &gt; 1.334
+ &gt; 1.622
+ &gt; 1.921
+ &gt; 1.678
+ &gt; 1.163
+ &gt; 1.683
+ &gt; 1.689
+ &gt; 1.250
+ &gt; 1.377
+ &gt; 2.719
+ &gt; 1.864
+ &gt; 2.127
+ &gt; 0.966
+ &gt; 2.386
+ &gt; 1.976
+ &gt; 2.220
+ &gt; 0.835
+ &gt; 1.172
+ &gt; 1.747
+ &gt; 1.936
+ &gt; 1.297
+ &gt; 1.649
+ &gt; 1.820
+ &gt; 2.454
 </pre>
 </div>
 </div>
@@ -15753,7 +15758,7 @@ Number of data points in the test set: 12
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># summarize scores</span>
-<span class="n">summarize_scores</span><span class="p">(</span><span class="s1">&#39;MLP Model:&#39;</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="n">summarize_scores</span><span class="p">(</span><span class="s1">&#39;ConvLSTM Model:&#39;</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15773,7 +15778,7 @@ Number of data points in the test set: 12
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>MLP Model:: 0.887 RMSE (+/- 0.108)
+<pre>ConvLSTM Model:: 1.674 RMSE (+/- 0.476)
 </pre>
 </div>
 </div>
@@ -15787,7 +15792,7 @@ Number of data points in the test set: 12
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -15885,7 +15890,7 @@ Number of data points in the test set: 12
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Total time for the script: 0:01:20.098984
+<pre>Total time for the script: 0:44:25.059307
 </pre>
 </div>
 </div>
